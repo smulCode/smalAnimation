@@ -12,22 +12,35 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <title>animation</title>
   </head>
   <body>
+    <section class="move-area">
     <div class="container">
+      <div class="cat-container">
       <i class="fas fa-cat"></i>
+      <div class="face-container">
+      <div class='eye'></div>
+      <div class='eye'></div>
+      <i class="fas fa-caret-up nose"></i>
+      <div class="cat-mouth"></div>
+    </div>
+  </div>
       <div class="loader">
         <div class="fish">
           <i class="fas fa-fish"></i>
-          <i class="far fa-circle" style="--i: 0"></i>
-          <i class="far fa-circle" style="--i: 1"></i>
-          <i class="far fa-circle" style="--i: 2"></i>
-          <i class="far fa-circle" style="--i: 3"></i>
+          <i class="far fa-circle bubble" style="--i: 0"></i>
+          <i class="far fa-circle bubble" style="--i: 1"></i>
+          <i class="far fa-circle bubble" style="--i: 2"></i>
+          <i class="far fa-circle bubble" style="--i: 3"></i>
         </div>
 
         <span><i></i></span>
       </div>
     </div>
+  </section>
+
+  <script src="/js/main.js"></script>
   </body>
 </html>

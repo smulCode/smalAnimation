@@ -10,6 +10,7 @@
   align-items: center;
   min-height: 100vh;
   background-color: #eaeef0;
+  background-color: #111;
 }
 
 .loader {
@@ -40,21 +41,25 @@
       content: "";
       position: absolute;
       inset: 40px;
-      background-color: #eaeef0;
-      background-color: rgb(173, 216, 230);
+background-image: linear-gradient(315deg, #fefefe 0%, #00a4e4 74%);
       border: 3px solid #eaeef0;
       border-radius: 50%;
       box-shadow: -8px -8px 15px rgba(255, 255, 255, 1),
         8px 8px 25px rgba(0, 0, 0, 0.15), inset 3px 3px 25px rgba(0, 0, 0, 0.15),
         -1px -1px 15px rgba(255, 255, 255, 1);
     }
-    // background-color: rgba(255, 255, 255, .15);
-    // backdrop-filter: blur(5px);
+
+   // background-color: rgba(255, 255, 255, .15);
+    //backdrop-filter: blur(5px);
+   
     i {
       position: absolute;
       inset: 0;
       border-radius: 50%;
       background: linear-gradient(#42abff, #ff4f8b, #ffeb3b);
+      background-color: #045de9;
+      background-image: linear-gradient(315deg, #045de9 0%, #09c6f9 74%);
+    
       animation: animate 1s linear infinite;
     }
   }
@@ -82,23 +87,46 @@
 
   .fa-fish {
     position: absolute;
-    color: orange;
+    // color: orange;
+    // color: #f5d020;
+  background-image: linear-gradient(315deg, #f5d020 0%, #f53803 74%);
     font-size: 3.5em;
     -webkit-text-stroke: 2px rgba(0, 0, 0, 0.493);
-    animation: animateSmile 0.2s linear infinite;
+    animation: animateFish 8s linear infinite;
+    -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
   }
 }
 
-@keyframes animateSmile {
+@keyframes animateFish {
   0% {
-    transform: translate(0, 0);
+    transform: translate(-3em, 0) scale(1.6);
   }
   50% {
-    transform: translate(-3px, -3px);
+    transform: translate(3em, 0) scale(1);
   }
-}
+  75% {
+    transform: translate(2em, 0) rotate(180deg) scale(1.2);
+  }
 
-.fa-circle {
+  100% {
+    transform: translate(-3em, 0) rotate(180deg) scale(1) ;
+  }
+
+}
+// @keyframes animateFishsize {
+//   50% {
+//     transform:scale(1);
+//   }
+//   100% {
+//     transform:scale(1.6);
+//   }
+// }
+
+
+
+.bubble {
   position: absolute;
   bottom: calc(35px * var(--i));
   left: calc(45px * var(--i));
@@ -111,7 +139,7 @@
     rgba(255, 255, 255, 0.5) 0%,
     rgba(255, 255, 255, 0) 70%
   );
-  animation: animateCode 9s linear infinite;
+  animation: animateCode 4s linear infinite;
   animation-delay: calc(-0.5s * var(--i));
 
   // &::after{
@@ -124,10 +152,98 @@
     transform: translateY(calc(35 * 5px));
   }
   100% {
-    transform: translateY(calc(-35 * 5px)) rotate(200deg);
+    transform: translateY(calc(-35 * 5px)) ;
   }
 }
-
+.cat-container{
+  position: relative;
+}
 .fa-cat {
   font-size: 13em;
+  background-color: #772f1a;
+background-image: linear-gradient(315deg, #772f1a 0%, #f2a65a 74%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+
+
+}
+
+// .eye-left{
+//   position: absolute;
+//   color: white;
+//   font-size:1.5rem;
+//   top:50px;
+//   right:52px;
+//   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.493);
+// }
+// .eye-right{
+//   position: absolute;
+//   color: white;
+//   font-size:1.5rem;
+//   top:50px;
+//   right:20px;
+//   -webkit-text-stroke: 1px rgba(0, 0, 0, 0.493);
+
+
+// }
+
+
+.face-container{
+  position: absolute;
+  top:45px;
+  right: 15px;
+}
+.eye {
+  position: relative;
+  display: inline-block;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background: #CCC;
+  background-color: #e2c9be;
+  background-image: linear-gradient(315deg, #e2c9be 0%, #fbf7e9 74%);
+  
+}
+.eye:before { /*pupil*/
+  position: absolute;
+  bottom: 17px;
+  right: 10px;
+  width: 10px;
+  height: 10px;
+  background: #000;
+  border-radius: 50%;
+  content: " ";
+  background-color: #fbb034;
+background-image: linear-gradient(315deg, #fbb034 0%, #ffdd00 74%);
+}
+// .eye:after { /*pupil*/
+//   position: absolute;
+//   bottom: 21px;
+//   right: 10px;
+//   width: 10px;
+//   height: 2px;
+//   background: #000;
+//   border-radius: 50%;
+//   content: " ";
+ 
+// }
+.nose{
+  position: absolute;
+  color: pink;
+  font-size:1.5rem;
+  top:25px;
+  right:25px;
+  transform:rotate(180deg);
+  background-color: #f18960;
+background-image: linear-gradient(315deg, #f18960 0%, #f8bc9c 74%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+z-index: 3;
+
+}
+
+.move-area{/*normally use body*/
+  width: 100vw;
+  height: 100vh;
+ 
 }
